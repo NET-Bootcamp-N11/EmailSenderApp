@@ -1,10 +1,6 @@
-﻿using EmailSenderApp.Application.Services.EmailServces;
+﻿using EmailSenderApp.Application.Services.AuthServices;
+using EmailSenderApp.Application.Services.EmailServces;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EmailSenderApp.Application
 {
@@ -13,6 +9,7 @@ namespace EmailSenderApp.Application
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
             services.AddScoped<IEmailService, EmailService>();
+            services.AddScoped<IAuthService, AuthService>();
 
             return services;
         }
